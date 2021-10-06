@@ -40,3 +40,9 @@ Use `vagrant ssh` to use sudo.
 Use `ssh://127.0.0.1:2222` login: `project` password: `project` for regular tasks like the code deployment.
 
 DB can be accessed via `jdbc:mysql://192.168.56.37:3306/project` login: `project` password: `project`
+
+It's seeded with the next user records:
+
+admin@project.local / Password
+
+tester1@project.local / tester1
