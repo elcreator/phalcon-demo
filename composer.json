@@ -1,0 +1,27 @@
+{
+    "name": "elcreator/phalcon-demo",
+    "description": "Demo for the Phalcon 5 on Ubuntu 20 with Nginx and PHP7.4",
+    "require": {
+        "ext-curl": "*",
+        "ext-mbstring": "*",
+        "ext-psr": "*",
+        "ext-json": "*",
+        "ext-ctype": "*",
+        "ext-zip": "*",
+        "gettext/gettext": "^4.5",
+        "justinrainbow/json-schema": "*",
+        "nyholm/psr7": "*"
+    },
+    "authors": [
+        {
+            "name": "Artur Kyryliuk",
+            "email": "mail@artur.work"
+        }
+    ],
+    "license": "MIT",
+    "minimum-stability": "alpha",
+    "prefer-stable": true,
+    "require-dev": {
+        "phalcon/ide-stubs": "v5.0.0-alpha.6"
+    }
+}

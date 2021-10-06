@@ -1,0 +1,44 @@
+{% extends "registered/page.twig" %}
+{% block footer %}
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script type="text/javascript">
+        angular.module('admin', []);
+        angular.module('admin').controller('UserController', function ($scope, $http, $timeout) {
+            var endpoint = location.href;
+            $scope.user = {{ user | json_encode }};
+            $scope.save = function () {
+                $timeout(function () {
+                    var user = Object.assign({}, $scope.user);
+                    delete user['createdAt'];
+                    delete user['updatedAt'];
+                    $http.put(endpoint, user).then(function (result) {
+                        $scope.user = angular.copy(result.data);
+                        alert('OK');
+                    });
+                });
+            };
+            $scope.remove = function () {
+                if (confirm('{{ __('Sure?') }}')) {
+                    $http.delete(endpoint).then(function () {
+                        alert('OK');
+                    });
+                }
+            };
+        });
+    </script>
+{% endblock %}
+{% block content %}
+    <div ng-app="admin" class="container">
+        <div ng-controller="UserController as $ctrl" class="col-lg-12">
+            <div><h1 ng-bind="user.fullname"></h1></div>
+            <div><span ng-bind="user.email"></span></div>
+            <div><label>{{ __('Is Banned') }} <input type="checkbox" ng-model="user.isBanned"></label></div>
+            <br>
+            <button ng-click="save()">{{ __('Save changes') }}</button>
+            <button ng-click="remove()">{{ __('Delete user') }}</button>
+        </div>
+        <div class="col-lg-12">
+            <a class="btn" href="/admin">{{ __('Back') }}</a>
+        </div>
+    </div>
+{% endblock %}

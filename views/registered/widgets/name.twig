@@ -1,0 +1,17 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a href="#toggle-fullname-form" data-toggle="collapse">{{ __('Full name') }}</a>
+        </h4>
+    </div>
+    <form id="toggle-fullname-form" action="/profile/fullname" method="post" class="panel-collapse collapse">
+        <div class="panel-body form-group">
+            <input type="text" name="username" class="form-control" id="edit-username"
+                   value="{{ user.fullname }}" />
+        </div>
+        <div class="panel-footer">
+            {{ token() }}
+            <button type="submit" name="submit" class="form-control">{{ __('Change full name') }}</button>
+        </div>
+    </form>
+</div>

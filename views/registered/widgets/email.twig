@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a href="#toggle-email-form" data-toggle="collapse">{{ __('E-mail') }}</a>
+        </h4>
+    </div>
+    <form id="toggle-email-form" action="/profile/email" method="post" class="panel-collapse collapse">
+        <div class="panel-body form-group">
+            <label for="current-email">{{ __('Current e-mail') }}</label>
+            <input type="email" name="current-email" class="form-control" disabled value="{{ user.email }}"
+                   autocomplete="email" />
+            <label for="new-email">{{ __('New e-mail') }}</label>
+            <input type="email" name="new-email" class="form-control" id="new-email" autocomplete="off" />
+            <label for="new-email-repeat">{{ __('Repeat new e-mail') }}</label>
+            <input type="email" name="new-email-repeat" class="form-control" autocomplete="off"
+                   id="new-email-repeat" />
+        </div>
+        <div class="panel-footer">
+            {{ token() }}
+            <button type="submit" name="submit" class="form-control">{{ __('Change e-mail') }}</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <ul class="nav navbar-nav">
+            <li>
+                <span>
+                {% for language in languages %}
+                    {% if lang == language %}
+                        <span>{{ language }}</span>
+                    {% else %}
+                        <span><a href="/{{ alias }}~{{ language }}">{{ language }}</a></span>
+                    {% endif %}
+                {% endfor %}
+                </span>
+            </li>
+            <li>
+                <a href="/index~{{ lang }}">{{ __('Home') }}</a>
+            </li>
+            <li>
+                <a href="/about~{{ lang }}">{{ __('About') }}</a>
+            </li>
+            {% if 'user' in this.acl.getMyRoles() %}
+                {% if 'admin' in this.acl.getMyRoles() %}
+                    <li>
+                        <a href="/admin~{{ lang }}">{{ __('Admin panel') }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="/profile~{{ lang }}">{{ __('Profile') }}</a>
+                    </li>
+                {% endif %}
+                <li>
+                    <a href="javascript:void(0);"
+                       onclick="document.getElementById('logout-form').submit.click();">{{ __('Log out') }}</a>
+                    <form action="/auth/logout" method="post" class="hide" id="logout-form">
+                        <div class="form-group col-lg-2">
+                            {{ token() }}
+                            <button type="submit" name="submit" class="form-control">{{ __('Log out') }}</button>
+                        </div>
+                    </form>
+                </li>
+            {% else %}
+                <li>
+                    <a href="/auth~{{ lang }}">{{ __('Log In') }} / {{ __('Register') }}</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

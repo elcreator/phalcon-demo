@@ -1,0 +1,184 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2021-10-06T17:21:12+03:00\n"
+"PO-Revision-Date: 2021-10-06T17:21:12+03:00\n"
+"Language: \n"
+
+#: /home/project/modules/auth/controllers/LoginController.php:27
+#: /home/project/modules/auth/controllers/LoginController.php:42
+#: /home/project/modules/auth/controllers/RegisterController.php:25
+#: /home/project/modules/auth/controllers/RegisterController.php:40
+msgid "content/auth"
+msgstr ""
+
+#: /home/project/modules/auth/controllers/LoginController.php:43
+msgid "Wrong password!"
+msgstr ""
+
+#: /home/project/modules/auth/controllers/RegisterController.php:26
+msgid "User with provided email already exists!"
+msgstr ""
+
+#: /home/project/modules/auth/controllers/RegisterController.php:41
+msgid "Cannot register. Please try again."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:24
+msgid "registered/profile"
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:66
+msgid "E-mail and confirm e-mail fields should be valid."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:70
+msgid "E-mail and confirm e-mail fields does not match."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:80
+msgid "E-mail is the same as previous one."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:91
+msgid "E-mail was successfully changed."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:93
+msgid "E-mail change notification."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:94
+msgid "Your e-mail %s was successfully changed to %s."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:107
+msgid "Password and password confirmation does not match."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:111
+msgid "Password containing %s symbols is easy to hack. Should be at least 6."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:125
+msgid "Password changed successfully."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:127
+msgid "Password change notification"
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:128
+msgid "Your password was changed."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:139
+msgid "Input your full name."
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:141
+msgid "Input your full name 4 letters min"
+msgstr ""
+
+#: /home/project/modules/profile/controllers/ProfileController.php:142
+msgid "Input your full name 50 letters max"
+msgstr ""
+
+#: /home/project/views/common/mainmenu.twig:16
+msgid "Home"
+msgstr ""
+
+#: /home/project/views/common/mainmenu.twig:19
+msgid "About"
+msgstr ""
+
+#: /home/project/views/common/mainmenu.twig:23
+msgid "Log out"
+msgstr ""
+
+#: /home/project/views/common/mainmenu.twig:27
+#: /home/project/views/content/auth~en.twig:11
+#: /home/project/views/content/auth~en.twig:30
+#: /home/project/views/content/auth~uk.twig:11
+#: /home/project/views/content/auth~uk.twig:30
+msgid "Log In"
+msgstr ""
+
+#: /home/project/views/common/mainmenu.twig:27
+#: /home/project/views/content/auth~en.twig:57
+#: /home/project/views/content/auth~uk.twig:57
+msgid "Register"
+msgstr ""
+
+#: /home/project/views/content/auth~en.twig:16
+#: /home/project/views/content/auth~uk.twig:16
+msgid "Login (e-mail)"
+msgstr ""
+
+#: /home/project/views/content/auth~en.twig:20
+#: /home/project/views/content/auth~en.twig:46
+#: /home/project/views/content/auth~uk.twig:20
+#: /home/project/views/content/auth~uk.twig:46
+#: /home/project/views/registered/widgets/password.twig:4
+msgid "Password"
+msgstr ""
+
+#: /home/project/views/content/auth~en.twig:24
+#: /home/project/views/content/auth~uk.twig:24
+msgid "Remember"
+msgstr ""
+
+#: /home/project/views/content/auth~en.twig:37
+#: /home/project/views/content/auth~uk.twig:37
+msgid "Registration"
+msgstr ""
+
+#: /home/project/views/content/auth~en.twig:42
+#: /home/project/views/content/auth~uk.twig:42
+#: /home/project/views/registered/widgets/email.twig:4
+msgid "E-mail"
+msgstr ""
+
+#: /home/project/views/content/auth~en.twig:50
+#: /home/project/views/content/auth~uk.twig:50
+#: /home/project/views/registered/widgets/name.twig:4
+msgid "Full name"
+msgstr ""
+
+#: /home/project/views/registered/widgets/name.twig:14
+msgid "Change full name"
+msgstr ""
+
+#: /home/project/views/registered/widgets/email.twig:9
+msgid "Current e-mail"
+msgstr ""
+
+#: /home/project/views/registered/widgets/email.twig:12
+msgid "New e-mail"
+msgstr ""
+
+#: /home/project/views/registered/widgets/email.twig:14
+msgid "Repeat new e-mail"
+msgstr ""
+
+#: /home/project/views/registered/widgets/email.twig:20
+msgid "Change e-mail"
+msgstr ""
+
+#: /home/project/views/registered/widgets/password.twig:9
+msgid "New password"
+msgstr ""
+
+#: /home/project/views/registered/widgets/password.twig:12
+msgid "Repeat new password"
+msgstr ""
+
+#: /home/project/views/registered/widgets/password.twig:19
+msgid "Change password"
+msgstr ""

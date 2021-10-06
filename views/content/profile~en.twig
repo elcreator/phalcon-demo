@@ -1,0 +1,20 @@
+{% extends "registered/page.twig" %}
+{% block content %}
+<div class="container">
+<div class="row">
+    <div class="box">
+        {{ partial('common/alerts') }}
+        <div class="panel-group col-lg-4">
+        </div>
+        <div class="panel-group col-lg-4 ">
+            {{ partial('registered/widgets/email') }}
+            {{ partial('registered/widgets/password') }}
+            {{ partial('registered/widgets/name') }}
+        </div>
+        <div class="panel-group col-lg-4">
+        </div>
+    </div>
+</div>
+</div>
+<!-- /.container -->
+{% endblock %}

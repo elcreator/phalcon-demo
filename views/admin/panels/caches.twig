@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{ __('Caches') }}</div>
+    <div class="panel-body row">
+        <div class="col-lg-3">
+            <form action="/admin/cache/translations" method="post">
+                {{ token() }}
+                <button type="submit" class="form-control">{{ __('Clear translation cache') }}</button>
+            </form>
+        </div>
+        <div class="col-lg-3">
+            <form action="/admin/cache/views" method="post">
+                {{ token() }}
+                <button type="submit" class="form-control">{{ __('Clear view cache') }}</button>
+            </form>
+        </div>
+        <div class="col-lg-3">
+            <form action="/admin/cache/config" method="post">
+                {{ token() }}
+                <button type="submit" class="form-control">{{ __('Clear config cache') }}</button>
+            </form>
+        </div>
+    </div>
+</div>

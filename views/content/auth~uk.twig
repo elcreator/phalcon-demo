@@ -1,0 +1,68 @@
+{% extends "page.twig" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="box">
+            {{ partial('common/alerts') }}
+            <div class="clearfix"></div>
+            <div class="col-lg-12">
+                <div class="col-lg-6">
+                    <hr>
+                    <h2 class="intro-text text-center">{{ __('Log In') }}</h2>
+                    <hr>
+                    <div class="row">
+                        <form action="/auth/login" id="loginform" method="post">
+                            <div class="form-group col-lg-8">
+                                <label for="login-login">{{ __('Login (e-mail)') }}</label>
+                                <input type="text" name="login" class="form-control" id="login-login"/>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="login-password">{{ __('Password') }}</label>
+                                <input type="password" name="password" class="form-control" id="login-password"/>
+                            </div>
+                            <div class="form-group col-lg-5">
+                                <label for="login-remember">{{ __('Remember') }}</label>
+                                <input type="checkbox" name="remember" class="checkbox-inline" id="login-remember"
+                                       value="1">
+                            </div>
+                            <div class="form-group col-lg-7">
+                                {{ token() }}
+                                <button type="submit" class="form-control" id="login-submit">{{ __('Log In') }}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <hr>
+                    <h2 class="intro-text text-center">{{ __('Registration') }}</h2>
+                    <hr>
+                    <div class="row">
+                        <form action="/auth/register" method="post">
+                            <div class="form-group col-lg-8">
+                                <label for="register-email">{{ __('E-mail') }}</label>
+                                <input type="text" name="email" class="form-control" id="register-email"/>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label for="register-password">{{ __('Password') }}</label>
+                                <input type="password" name="password" class="form-control" id="register-password"/>
+                            </div>
+                            <div class="form-group col-lg-7">
+                                <label for="register-fullname">{{ __('Full name') }}</label>
+                                <input type="text" name="fullname" class="form-control" id="register-fullname"/>
+                            </div>
+                            <div class="form-group col-lg-5">
+                                <label for="register-submit"> &nbsp;</label>
+                                {{ token() }}
+                                <button type="submit" name="submit" class="form-control" id="register-submit">
+                                    {{ __('Register') }}
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+{% endblock %}

@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+    <div class="panel-heading">{{ __('Users') }}</div>
+    <div class="panel-body">
+        <p>{{ __('Total') }}: {{ users|length }}</p>
+        <table class="table table-bordered">
+            <thead><tr>
+                <th>{{ __('ID') }}</th>
+                <th>{{ __('E-mail') }}</th>
+                <th>{{ __('Full Name') }}</th>
+                <th>{{ __('State') }}</th>
+                <th>{{ __('Reg at') }}</th>
+                <th>{{ __('Upd at') }}</th>
+            </tr></thead>
+            <tbody>{% for user in users %}<tr>
+                <td><a href="/admin/users/{{ user.id }}">{{ user.id }}</a></td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.fullname }}</td>
+                <td>
+                    {{ user.isBanned ? 'BAN' : '' }}
+                    {{ user.isTest ? 'TST' : '' }}
+                </td>
+                <td>{{ date('dM y', strtotime(user.createdAt)) }}</td>
+                <td>{{ date('dM y', strtotime(user.updatedAt)) }}</td>
+                </tr>{% endfor %}</tbody>
+        </table>
+    </div>
+</div>

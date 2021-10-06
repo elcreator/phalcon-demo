@@ -1,0 +1,16 @@
+{% extends "page.twig" %}
+{% block content %}
+    <div class="container">
+        <div class="box">
+            <div class="row">
+                <div class="col-lg-12">
+                    {{ partial('common/alerts') }}
+                    <h1>{{ __('Admin panel') }}</h1>
+                </div>
+            </div>
+            {{ partial('admin/panels/caches') }}
+            {{ partial('admin/panels/users') }}
+        </div>
+    </div>
+    <!-- /.container -->
+{% endblock %}

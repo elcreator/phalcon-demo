@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+{% block head %}
+    {{ partial('common/meta') }}
+    {{ partial('common/head-css') }}
+    {{ partial('common/head-js') }}
+{% endblock %}
+</head>
+<body>
+{% block header %}
+    {{ partial('common/header') }}
+    {{ partial('common/mainmenu') }}
+{% endblock %}
+{% block content %}
+    NO CONTENT
+{% endblock %}
+{% block footer %}
+    {{ partial('common/footer') }}
+    {{ partial('common/footer-js') }}
+{% endblock %}
+</body>
+</html>
