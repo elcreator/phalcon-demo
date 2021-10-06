@@ -10,9 +10,7 @@ namespace Auth\Models;
 
 abstract class User extends \BaseModel
 {
-    const SESSION_ROLE = 'role';
     const SESSION_ROLES = 'roles';
-    const SESSION_IP = 'ip';
     const SESSION_ID = 'id';
     const ROLE_BANNED = 'banned';
     const ROLE_USER = 'user';

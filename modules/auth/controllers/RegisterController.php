@@ -9,7 +9,6 @@
 namespace Auth\Controllers;
 
 use Auth\Models\EmailUser;
-use Phalcon\Http\Client\Exception;
 
 class RegisterController extends BaseAuthController
 {

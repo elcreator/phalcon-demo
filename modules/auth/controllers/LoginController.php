@@ -12,21 +12,6 @@ use Auth\Models\EmailUser;
 
 class LoginController extends BaseAuthController
 {
-    public function indexAction()
-    {
-        $token = $this->cookies->get('token')->getValue();
-        if (is_string($token))
-        {
-            $user = EmailUser::findFirst(["token = ?0", "bind" => [$token]]);
-            if ($user)
-            {
-                $this->_processAuthenticated($user);
-                return;
-            }
-        }
-        $this->view->pick($this->_localizePath('content/auth'));
-    }
-
     public function loginAction()
     {
         $login = $this->request->getPost('login', 'email', null, true);

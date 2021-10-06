@@ -94,6 +94,7 @@ class DiFactory extends \Phalcon\DI\FactoryDefault
         {
             return new \Phalcon\Db\Adapter\Pdo\Mysql($this->_getFromConfig('db'));
         });
+        $this->setShared('mailer', new \Mailer());
     }
 
     private function _getFromConfig($section, $key = null)
