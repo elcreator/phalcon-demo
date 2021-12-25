@@ -16,8 +16,8 @@ abstract class BaseModule
      */
     public function registerAutoloaders(\DiFactory $dependencyInjector)
     {
-        $loader = new \Phalcon\Loader();
-        $loader->registerNamespaces($this->_getNamespaces())->register();
+        $loader = new \Phalcon\Autoload\Loader();
+        $loader->setNamespaces($this->_getNamespaces())->register();
     }
 
     /**

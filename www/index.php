@@ -7,8 +7,8 @@ require_once COMPOSER_PATH;
 
 try
 {
-    $loader = new \Phalcon\Loader();
-    $loader->registerDirs([INCLUDES_DIR, SERVICES_DIR]);
+    $loader = new \Phalcon\Autoload\Loader();
+    $loader->setDirectories([INCLUDES_DIR, SERVICES_DIR]);
     $loader->register();
 
     $di = new \DiFactory;

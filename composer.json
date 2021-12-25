@@ -9,6 +9,7 @@
         "ext-ctype": "*",
         "ext-zip": "*",
         "gettext/gettext": "^4.5",
+        "elcreator/phalcon.eager-loading": "*",
         "justinrainbow/json-schema": "*",
         "nyholm/psr7": "*"
     },
