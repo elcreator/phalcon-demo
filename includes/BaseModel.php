@@ -29,7 +29,7 @@ class BaseModel extends Model
 
     public function toArray($columns = null): array
     {
-        // if ($columns === null) return [];
+        // your breakpoint here
         return parent::toArray($columns);
     }
 
@@ -65,7 +65,7 @@ class BaseModel extends Model
 
     public function beforeSave()
     {
-        //
+        // your breakpoint here
     }
 
     public function prepareSave()
@@ -75,12 +75,12 @@ class BaseModel extends Model
 
     public function onValidationFails()
     {
-        //
+        // your breakpoint here
     }
 
     public function validation()
     {
-        //
+        // your breakpoint here
     }
 
     public function afterFetch()
