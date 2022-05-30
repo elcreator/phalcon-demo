@@ -15,7 +15,7 @@ Image based on Ubuntu 20.
 Vagrantfile contains scripts that automatically installs
 - Nginx
 - PHP 7.4
-- Phalcon 5 alpha
+- Phalcon 5 beta3
 - MySQL8
 - XDebug
 - and minor handy or required tools
