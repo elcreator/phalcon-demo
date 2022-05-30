@@ -1,5 +1,5 @@
 # phalcon-demo
-Basic app that I created to demonstrate capabilities of the Phalcon framework (v5, currently alpha).
+Basic app that I created to demonstrate capabilities of the Phalcon framework (v5, currently beta3).
 Implemented
 - https
 - localization
