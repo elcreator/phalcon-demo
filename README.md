@@ -1,5 +1,5 @@
 # phalcon-demo
-Basic app that I created to demonstrate capabilities of the Phalcon framework (v5, currently beta3).
+Basic app that I created to demonstrate capabilities of the Phalcon framework v5.
 Implemented
 - https
 - localization
@@ -15,7 +15,7 @@ Image based on Ubuntu 20.
 Vagrantfile contains scripts that automatically installs
 - Nginx
 - PHP 7.4
-- Phalcon 5 beta3
+- Phalcon 5.0.4
 - MySQL8
 - XDebug
 - and minor handy or required tools
