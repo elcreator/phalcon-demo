@@ -8,8 +8,8 @@
         "ext-json": "*",
         "ext-ctype": "*",
         "ext-zip": "*",
+        "elcreator/phalcon.eager-loading": "dev-master",
         "gettext/gettext": "^4.5",
-        "elcreator/phalcon.eager-loading": "*",
         "justinrainbow/json-schema": "*",
         "nyholm/psr7": "*"
     },
@@ -20,9 +20,9 @@
         }
     ],
     "license": "MIT",
-    "minimum-stability": "alpha",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "phalcon/ide-stubs": "v5.0.0-alpha.6"
+        "phalcon/ide-stubs": "^5.0"
     }
 }
