@@ -1,8 +1,6 @@
 <?php
 /**
- * @file    Acl.php
- * @brief [ 'module.controller' => [ '*'|'role' => ['action'] ] ]
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 class Acl extends \Phalcon\Acl\Adapter\Memory
@@ -12,7 +10,7 @@ class Acl extends \Phalcon\Acl\Adapter\Memory
     const ROLE_USER = 'user';
     const ROLE_ADMIN = 'admin';
 
-    /** @var Phalcon\Di */
+    /** @var Phalcon\Di\Di */
     private $_di;
     /** @var array */
     private $_systemRoles;

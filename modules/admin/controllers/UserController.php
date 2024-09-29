@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 10.05.2017
- * Time: 23:13
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Admin\Controllers;

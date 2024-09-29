@@ -1,21 +1,18 @@
 <?php
-
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 14.05.2017
- * Time: 18:13
+ * @author Artur Kyryliuk <mail@artur.work>
  */
+
 class BeforeExecuteRouteEvent
 {
     /** @var Phalcon\Logger\Adapter */
     private $_log;
 
     /**
-     * @param \Phalcon\Di $di
+     * @param \Phalcon\Di\DiInterface $di
      * @param \Phalcon\Mvc\Dispatcher $dispatcher
      */
-    public function __construct(\Phalcon\Di $di, \Phalcon\Mvc\Dispatcher $dispatcher)
+    public function __construct(\Phalcon\Di\DiInterface $di, \Phalcon\Mvc\Dispatcher $dispatcher)
     {
         $this->_log = $di->get('log');
         $ip = $di->get('request')->getClientAddress();
@@ -23,7 +20,7 @@ class BeforeExecuteRouteEvent
         $acl = $di->get('acl');
         /** @var \I18n $i18n */
         $i18n = $di->get('i18n');
-        /** @var \Phalcon\Session\AdapterInterface $session */
+        /** @var \Phalcon\Session\ManagerInterface $session */
         $session = $di->get('session');
         /** @var \Phalcon\Http\Response\Cookies $cookies */
         $cookies = $di->get('cookies');
@@ -60,7 +57,7 @@ class BeforeExecuteRouteEvent
      * @param string $resource
      * @param string $action
      * @param string $ip
-     * @throws \Phalcon\Security\Exception
+     * @throws \Phalcon\Acl\Exception
      */
     private function _validateAccess(\Acl $acl, $resource, $action, $ip)
     {
@@ -76,11 +73,11 @@ class BeforeExecuteRouteEvent
                 return;
             }
         }
-        throw new \Phalcon\Security\Exception("Access to $resource is denied for " . implode(',', $roles) . " from $ip!");
+        throw new \Phalcon\Acl\Exception("Access to $resource is denied for " . implode(',', $roles) . " from $ip!");
     }
 
     /**
-     * @param \Phalcon\Session\AdapterInterface $session
+     * @param \Phalcon\Session\ManagerInterface $session
      * @param Acl $acl
      * @return array
      */

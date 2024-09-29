@@ -1,9 +1,6 @@
 <?php
 /**
- * @file    LoginController.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
- * @package Auth\controllers
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Auth\Controllers;

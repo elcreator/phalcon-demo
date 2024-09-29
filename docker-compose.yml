@@ -1,0 +1,82 @@
+services:
+
+  # PHP Service
+  php:
+    image: arturwork/phalcon-5.8-alpine:latest
+    container_name: project_php_fpm
+    restart: unless-stopped
+    environment:
+      - CONTAINER_ROLE=app
+      - SERVICE_NAME=app
+      - SERVICE_TAGS=dev
+    working_dir: /var/www
+    expose:
+       - "9000"
+    ports:
+       - "9003"
+    volumes:
+      - ./:/var/www
+      - ./:/home/project
+      - ./config/php-fpm/project.conf:/usr/local/etc/php-fpm.d/www.conf
+      - ./config/php-fpm/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+      - ./config/php-fpm/xdebug.ini:/usr/local/etc/php/php-fpm.d/xdebug.ini
+      - ./config/php-entrypoint.sh:/entrypoint.sh
+    entrypoint: /bin/sh -c "/entrypoint.sh"
+    depends_on:
+      - db
+    networks:
+      - appnet
+
+  webserver:
+    image: nginx:latest
+    container_name: webserver
+    deploy:
+      resources:
+        limits:
+          cpus: '0.2'
+          memory: 128M
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www
+      - ./:/home/project
+      - ./config/hosts/:/etc/hosts
+      - ./config/nginx/:/etc/nginx/conf.d/
+      - ./config/nginx-entrypoint.sh:/entrypoint.sh
+    environment:
+      DOMAIN: "project.local"
+    entrypoint: /bin/sh -c "/entrypoint.sh"
+    depends_on:
+      - php
+    networks:
+      - appnet
+
+  db:
+    image: mysql:8.2
+    restart: unless-stopped
+    command: [ mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_general_ci ]
+    ports:
+      - '${FORWARD_DB_PORT:-3306}:3306'
+    environment:
+      MYSQL_ROOT_PASSWORD: 'admin'
+      MYSQL_DATABASE: 'phalcon'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - 'mysql:/var/lib/mysql'
+    networks:
+      - appnet
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-ppassword" ]
+      retries: 3
+      timeout: 5s
+
+networks:
+  appnet:
+    driver: bridge
+
+volumes:
+  mysql:
+    driver: local

@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 12.05.2017
- * Time: 03:29
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Admin;
@@ -15,12 +12,12 @@ class Routes extends \BaseRoutes
     public function __construct(\Phalcon\Mvc\Router $router, $module)
     {
         parent::__construct($router, $module);
-        $this->_get('')(['admin']);
-        $this->_post('/cache/translations', 'cache', 'clearTranslation')(['admin']);
-        $this->_post('/cache/views', 'cache', 'clearView')(['admin']);
-        $this->_post('/cache/config', 'cache', 'clearConfig')(['admin']);
-        $this->_get('/users/{id:[0-9]+}', 'user', 'get')(['admin']);
-        $this->_put('/users/{id:[0-9]+}', 'user', 'update')(['admin']);
-        $this->_delete('/users/{id:[0-9]+}', 'user', 'delete')(['admin']);
+        $this->get('')(['admin']);
+        $this->post('/cache/translations', 'cache', 'clearTranslation')(['admin']);
+        $this->post('/cache/views', 'cache', 'clearView')(['admin']);
+        $this->post('/cache/config', 'cache', 'clearConfig')(['admin']);
+        $this->get('/users/{id:[0-9]+}', 'user', 'get')(['admin']);
+        $this->put('/users/{id:[0-9]+}', 'user', 'update')(['admin']);
+        $this->delete('/users/{id:[0-9]+}', 'user', 'delete')(['admin']);
     }
 }

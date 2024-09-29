@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur.Kyryliuk
- * Date: 5/16/16
- * Time: 2:39 PM
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 class DiFactory extends \Phalcon\DI\FactoryDefault
@@ -24,7 +21,7 @@ class DiFactory extends \Phalcon\DI\FactoryDefault
         $this->setShared('log', function ()
         {
             $fileAdapter = new Phalcon\Logger\Adapter\Stream(LOG_PATH);
-            $logger = new \Phalcon\Logger(
+            $logger = new \Phalcon\Logger\Logger(
                 'messages', [
                     'local' => $fileAdapter
                 ]
@@ -39,7 +36,7 @@ class DiFactory extends \Phalcon\DI\FactoryDefault
                 'defaultSerializer' => 'Php',
                 'lifetime' => 5
             ]);
-            return new \Phalcon\Cache($adapter);
+            return new \Phalcon\Cache\Cache($adapter);
         });
         $this->setShared('i18n', function ()
         {
@@ -63,7 +60,7 @@ class DiFactory extends \Phalcon\DI\FactoryDefault
         });
         $this->setShared('crypt', function ()
         {
-            $crypt = new \Phalcon\Crypt;
+            $crypt = new \Phalcon\Encryption\Crypt();
             $crypt->setKey($this->_getFromConfig('crypt', 'key'));
             return $crypt;
         });

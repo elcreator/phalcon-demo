@@ -1,13 +1,11 @@
 {
     "name": "elcreator/phalcon-demo",
-    "description": "Demo for the Phalcon 5 on Ubuntu 20 with Nginx and PHP7.4",
+    "description": "Demo for the Phalcon 5 on Ubuntu 20 with Nginx and PHP8.3",
     "require": {
         "ext-curl": "*",
         "ext-mbstring": "*",
-        "ext-psr": "*",
         "ext-json": "*",
         "ext-ctype": "*",
-        "ext-zip": "*",
         "elcreator/phalcon.eager-loading": "dev-master",
         "gettext/gettext": "^4.5",
         "justinrainbow/json-schema": "*",
@@ -23,6 +21,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "phalcon/ide-stubs": "^5.0"
+        "phalcon/devtools": "5.*",
+        "phalcon/ide-stubs": "5.*"
     }
 }

@@ -1,9 +1,6 @@
 <?php
 /**
- * @file    Module.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
- * @package Auth
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Profile;

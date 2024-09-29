@@ -1,9 +1,6 @@
 <?php
 /**
- * @file    Translations.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
- * @package Admin\models
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 class Translations extends \BaseModel
@@ -12,8 +9,11 @@ class Translations extends \BaseModel
     {
         $translations = new \Gettext\Translations();
         $this->_parseTranslations(MODULES_DIR, 'php', new \Gettext\Extractors\PhpCode(), $translations);
+        $this->_parseTranslations(JS_DIR, 'phtml', new \Gettext\Extractors\PhpCode(), $translations);
         $this->_parseTranslations(VIEWS_DIR, 'twig', new \Gettext\Extractors\JsCode(), $translations);
         $translations->toPoFile(I18N_POT);
+        $translations->toJsonFile(I18N_POT . '.json');
+        $translations->toJsonDictionaryFile(I18N_POT . '.dict.json');
         $this->_parsePoFiles(I18N_DIR);
     }
 

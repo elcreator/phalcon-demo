@@ -1,17 +1,13 @@
 <?php
 /**
- * @file    ProfileController.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
- * @package Profile\Controllers
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Profile\Controllers;
 
 use Auth\Models\EmailUser;
-use Phalcon\Exception;
-use Phalcon\Validation\Validator;
-use Phalcon\Validation;
+use Phalcon\Filter\Validation\Validator;
+use Phalcon\Filter\Validation;
 
 class ProfileController extends \BaseController
 {

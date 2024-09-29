@@ -1,8 +1,6 @@
 <?php
 /**
- * @file    AuthException.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 class AuthException extends LogicException {}

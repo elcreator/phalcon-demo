@@ -12,7 +12,7 @@ define('I18N_POT', I18N_DIR . 'i18n.pot');
 
 define('TMP_DIR', BASE_PATH . 'tmp/');
 define('CACHE_DIR', TMP_DIR . 'cache/');
-define('LOG_DIR', TMP_DIR . 'log/');
+define('LOG_DIR', BASE_PATH . 'logs/');
 
 define('VIEWS_CACHE_DIR', CACHE_DIR . 'views/');
 define('I18N_CACHE_DIR', CACHE_DIR . 'i18n/');
@@ -28,7 +28,6 @@ define('CSS_WEB_DIR', '/css');
 define('JS_WEB_DIR', '/js');
 
 // Other constants
-date_default_timezone_set('Europe/Kiev');
 define('SESSION_COOKIE_NAME', 'PHPSESSID');
 define('TOKEN_COOKIE_NAME', 'token');
 define('DT_FORMAT', 'c');

@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 20.05.2017
- * Time: 17:25
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 class FlashSession extends \Phalcon\Flash\Session
@@ -15,10 +12,10 @@ class FlashSession extends \Phalcon\Flash\Session
     /**
      * Outputs a message
      *
-     * @param $type
+     * @param string $type
      * @param string $message
      */
-    public function message($type, string $message): ?string
+    public function message(string $type, $message): ?string
     {
         return parent::message($type, sprintf($this->_messageInnerTemplate, $message));
     }

@@ -1,8 +1,6 @@
 <?php
 /**
- * @file    BaseController.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 /** @property \Phalcon\Config $config */
@@ -56,8 +54,9 @@ class BaseController extends \Phalcon\Mvc\Controller implements \Phalcon\Di\Inje
         {
             new \Translations();
         }
+        $translations = \Gettext\Translations::fromJsonDictionaryFile(I18N_DIR . $lang . '.json');
         $translator = new \Gettext\Translator();
-        $translator->loadTranslations($cacheFileName);
+        $translator->loadTranslations($translations);
         $translator->register();
     }
 
@@ -118,28 +117,6 @@ class BaseController extends \Phalcon\Mvc\Controller implements \Phalcon\Di\Inje
         $this->_redirect($redirectUrl);
     }
 
-    protected function _inputPost($schemaPath = null)
-    {
-        $data = (object)$this->request->getPost();
-        if (is_null($schemaPath)) {
-            return $data;
-        }
-        $schema = json_decode(trim(file_get_contents($schemaPath)));
-
-        $validator = new JsonSchema\Validator();
-        $validator->check($data, $schema);
-
-        if ($validator->isValid()) {
-            return $data;
-        } else {
-            $errors = "JSON validation failed:\n";
-            foreach ($validator->getErrors() as $error) {
-                $errors .= sprintf("[%s] %s\n", $error['property'], $error['message']);
-            }
-            throw new \Exception($errors);
-        }
-    }
-
     /**
      * @param string|null $schemaPath
      * @return stdClass
@@ -154,7 +131,7 @@ class BaseController extends \Phalcon\Mvc\Controller implements \Phalcon\Di\Inje
         $schema = json_decode(trim(file_get_contents($schemaPath)));
 
         $validator = new JsonSchema\Validator();
-        $validator->check($data, $schema);
+        $validator->validate($data, $schema);
 
         if ($validator->isValid()) {
             return $data;
@@ -170,11 +147,12 @@ class BaseController extends \Phalcon\Mvc\Controller implements \Phalcon\Di\Inje
     /**
      * @param mixed $result
      */
-    protected function _outputJson($result)
+    protected function _outputJson($result, $code = 200)
     {
         $this->view->disable();
         $this->response->setContentType('application/json');
         $this->response->setJsonContent($result, JSON_UNESCAPED_UNICODE);
+        $this->response->setStatusCode($code);
         $this->response->send();
     }
 

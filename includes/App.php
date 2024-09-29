@@ -1,12 +1,8 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 13.05.2017
- * Time: 18:17
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
-/** @property \Phalcon\Logger\Multiple log */
 class App extends \Phalcon\Mvc\Application
 {
     /**
@@ -15,9 +11,8 @@ class App extends \Phalcon\Mvc\Application
     public function __construct(DiFactory $dependencyInjector)
     {
         parent::__construct($dependencyInjector);
-        $defaultModules = ['content'];
-        $this->setDefaultModule($defaultModules[0]);
-        $moduleNames = array_merge($defaultModules, $dependencyInjector->getShared('config')->get('modules')->toArray());
+        $this->setDefaultModule('Content');
+        $moduleNames = \Sources::getModuleNames();
         $this->_registerModules($moduleNames);
         $this->_addModuleRoutes($moduleNames, $dependencyInjector->getShared('acl'));
     }
@@ -27,24 +22,9 @@ class App extends \Phalcon\Mvc\Application
      */
     private function _registerModules($moduleNames)
     {
-        $this->registerModules($this->_getRegisterModulesConfig($moduleNames));
+        $this->registerModules(\Sources::getRegisterModulesConfig($moduleNames));
     }
 
-    /**
-     * @param array $moduleNames
-     * @return array
-     */
-    private function _getRegisterModulesConfig($moduleNames)
-    {
-        $modulesConfig = [];
-        foreach ($moduleNames as $moduleName) {
-            $modulesConfig[$moduleName] = [
-                'className' => ucfirst($moduleName) . '\Module',
-                'path' => MODULES_DIR . $moduleName . '/Module.php'
-            ];
-        }
-        return $modulesConfig;
-    }
 
     /**
      * @param array $moduleNames

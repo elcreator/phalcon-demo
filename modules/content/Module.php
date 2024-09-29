@@ -1,8 +1,6 @@
 <?php
 /**
- * @file    Module.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Content;

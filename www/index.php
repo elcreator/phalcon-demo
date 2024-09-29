@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Artur Kyryliuk <mail@artur.work>
+ */
 
 require '../includes/Constants.php';
 
@@ -8,6 +11,8 @@ require_once COMPOSER_PATH;
 try
 {
     $loader = new \Phalcon\Autoload\Loader();
+    $loader->setFiles(['../vendor/phalcon.eager-loading/src/EagerLoadingTrait.php'], true);
+    $loader->setNamespaces(['Phalcon\\Mvc\\Model\\EagerLoading' => '../vendor/phalcon.eager-loading/src/EagerLoading'], true);
     $loader->setDirectories([INCLUDES_DIR, SERVICES_DIR]);
     $loader->register();
 

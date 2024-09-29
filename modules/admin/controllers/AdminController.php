@@ -1,9 +1,6 @@
 <?php
 /**
- * @file    ProfileController.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
- * @package Profile\Controllers
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Admin\Controllers;

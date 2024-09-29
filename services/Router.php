@@ -1,8 +1,6 @@
 <?php
 /**
- * @file    Router.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 class Router extends \Phalcon\Mvc\Router

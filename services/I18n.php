@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 14.05.2018
- * Time: 2:44
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 class I18n

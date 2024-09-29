@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 20.05.2017
- * Time: 17:25
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 class Flash extends \Phalcon\Flash\Direct

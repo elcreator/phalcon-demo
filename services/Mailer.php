@@ -1,4 +1,7 @@
 <?php
+/**
+ * @author Artur Kyryliuk <mail@artur.work>
+ */
 
 class Mailer
 {

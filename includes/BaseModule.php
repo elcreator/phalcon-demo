@@ -1,8 +1,6 @@
 <?php
 /**
- * @file    BaseModule.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 abstract class BaseModule
@@ -14,7 +12,7 @@ abstract class BaseModule
      *
      * @param DiFactory
      */
-    public function registerAutoloaders(\DiFactory $dependencyInjector)
+    public function registerAutoloaders(\Phalcon\Di\DiInterface $dependencyInjector)
     {
         $loader = new \Phalcon\Autoload\Loader();
         $loader->setNamespaces($this->_getNamespaces())->register();
@@ -36,11 +34,11 @@ abstract class BaseModule
         $chunks = explode('\\', get_called_class());
         $className = array_pop($chunks);
         $namespace = implode('\\', $chunks);
-        $dir = MODULES_DIR . strtolower(implode('/', $chunks));
+        $dir = MODULES_DIR . implode('/', $chunks);
         $defaultNamespaces = [
-            $namespace . '\Controllers' => $dir . '/controllers',
-            $namespace . '\Models' => $dir . '/models',
-            'Models' => BASE_PATH . '/models/'
+            $namespace . '\Controllers' => $dir . '/Controllers',
+            $namespace . '\Models' => $dir . '/Models',
+            'Models' => BASE_PATH . 'Models/'
         ];
         return array_merge($defaultNamespaces, $this->externalNamespaces);
     }

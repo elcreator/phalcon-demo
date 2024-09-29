@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 04.04.16
- * Time: 22:30
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 use Phalcon\Mvc\Model;
@@ -27,10 +24,10 @@ class BaseModel extends Model
     /** @var string */
     public $updatedAt;
 
-    public function toArray($columns = null): array
+    public function toArray($columns = null, $useGetter = true): array
     {
         // your breakpoint here
-        return parent::toArray($columns);
+        return parent::toArray($columns, $useGetter);
     }
 
     public function columnMap()

@@ -1,9 +1,6 @@
 <?php
 /**
- * @file    User.php
- * @brief
- * @author  Artur Kirilyuk (artur.kirilyuk@gmail.com)
- * @package Auth\models
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Auth\Models;

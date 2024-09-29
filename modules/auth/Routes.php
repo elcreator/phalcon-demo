@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 12.05.2017
- * Time: 03:29
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Auth;
@@ -15,8 +12,8 @@ class Routes extends \BaseRoutes
     public function __construct(\Phalcon\Mvc\Router $router, $module)
     {
         parent::__construct($router, $module);
-        $this->_post('/register',                          'register')(['*']);
-        $this->_post('/logout',                            'logout')(['*']);
-        $this->_post('/login',                             'login',    'login')(['*']);
+        $this->post('/register',                          'register')(['*']);
+        $this->post('/logout',                            'logout')(['*']);
+        $this->post('/login',                             'login',    'login')(['*']);
     }
 }

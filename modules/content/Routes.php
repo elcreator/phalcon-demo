@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Artur
- * Date: 12.05.2017
- * Time: 03:29
+ * @author Artur Kyryliuk <mail@artur.work>
  */
 
 namespace Content;
